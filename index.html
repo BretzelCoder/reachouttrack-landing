@@ -20,11 +20,28 @@
     }
     h1 { font-size: 1.5rem; margin: 0; }
     p { max-width: 42ch; margin: 0; opacity: .8; }
+    figure {
+      margin: 1.5rem 0 0; width: 100%; max-width: 960px;
+    }
+    figure img {
+      width: 100%; height: auto; display: block;
+      border-radius: 10px; border: 1px solid rgba(0, 0, 0, .1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+    }
+    @media (prefers-color-scheme: dark) {
+      figure img { border-color: rgba(255, 255, 255, .12); }
+    }
+    figcaption { margin-top: .5rem; font-size: .8rem; opacity: .55; }
   </style>
 </head>
 <body>
   <h1>Le service n'est pas encore ouvert</h1>
   <p>ReachOutTrack ouvrira très bientôt. Un outil gratuit pour organiser sa
      recherche d'emploi, d'alternance et/ou de stage ou tout simplement gérer ses interactions réseaux.</p>
+  <figure>
+    <img src="DemoReachOutTrack.png"
+         alt="Aperçu de ReachOutTrack : tableau de bord avec candidatures, contacts, entreprises et rappels (données de démonstration fictives)." />
+    <figcaption>Aperçu de l'interface — données de démonstration</figcaption>
+  </figure>
 </body>
 </html>
