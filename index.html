@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ReachOutTrack — Le service n'est pas encore ouvert</title>
+  <title>ReachOutTrack — Le service ouvre progressivement</title>
   <meta name="robots" content="noindex" />
   <meta name="referrer" content="no-referrer" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -26,6 +26,17 @@
     }
     h1 { font-size: 1.5rem; margin: 0; }
     p { max-width: 42ch; margin: 0; opacity: .8; }
+    .notice {
+      max-width: 46ch; margin: 0; opacity: 1;
+      padding: 1rem 1.25rem; border-radius: 10px;
+      border: 1px solid rgba(91, 75, 214, .35);
+      background: rgba(91, 75, 214, .08);
+    }
+    .notice a { color: #5b4bd6; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .notice { border-color: rgba(140, 128, 255, .4); background: rgba(140, 128, 255, .12); }
+      .notice a { color: #b3a9ff; }
+    }
     figure {
       margin: 1.5rem 0 0; width: 100%; max-width: 960px;
     }
@@ -41,9 +52,14 @@
   </style>
 </head>
 <body>
-  <h1>Le service n'est pas encore ouvert</h1>
-  <p>ReachOutTrack ouvrira très bientôt. Un outil gratuit pour organiser sa
-     recherche d'emploi, d'alternance et/ou de stage ou tout simplement gérer ses interactions réseaux.</p>
+  <h1>Le service ouvre progressivement</h1>
+  <p>ReachOutTrack, c'est un outil gratuit pour organiser sa recherche d'emploi,
+     d'alternance et/ou de stage ou tout simplement gérer ses interactions réseaux.</p>
+  <p class="notice">
+    En attendant la mise en place de l'adresse définitive, l'application est
+    <strong>partiellement en service</strong> et déjà accessible ici :<br />
+    <a href="https://reachouttrack.vercel.app/" rel="noopener">reachouttrack.vercel.app</a>
+  </p>
   <figure>
     <img src="DemoReachOutTrack.png"
          alt="Aperçu de ReachOutTrack : tableau de bord avec candidatures, contacts, entreprises et rappels (données de démonstration fictives)." />
