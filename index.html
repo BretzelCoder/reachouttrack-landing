@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ReachOutTrack — Le service ouvre progressivement</title>
+  <title>ReachOutTrack — Le service est ouvert</title>
   <meta name="robots" content="noindex" />
   <meta name="referrer" content="no-referrer" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -17,7 +17,7 @@
       margin: 0; min-height: 100vh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      gap: 1rem; padding: 4rem 1.5rem; text-align: center;
+      gap: 1rem; padding: 4rem 1.5rem 2rem; text-align: center;
       font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       background: #fafafa; color: #1a1a1a;
     }
@@ -26,16 +26,22 @@
     }
     h1 { font-size: 1.5rem; margin: 0; }
     p { max-width: 42ch; margin: 0; opacity: .8; }
-    .notice {
-      max-width: 46ch; margin: 0; opacity: 1;
-      padding: 1rem 1.25rem; border-radius: 10px;
-      border: 1px solid rgba(91, 75, 214, .35);
-      background: rgba(91, 75, 214, .08);
+    .cta {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: .75rem; margin-top: .5rem;
     }
-    .notice a { color: #5b4bd6; font-weight: 600; }
+    .cta a {
+      display: inline-block; padding: .65rem 1.25rem; border-radius: 10px;
+      font-weight: 600; text-decoration: none;
+      border: 1px solid #5b4bd6;
+    }
+    .cta .primary { background: #5b4bd6; color: #fff; }
+    .cta .secondary { color: #5b4bd6; background: rgba(91, 75, 214, .08); }
+    .cta a:hover { filter: brightness(1.1); }
+    .cta a:focus-visible { outline: 2px solid #5b4bd6; outline-offset: 2px; }
     @media (prefers-color-scheme: dark) {
-      .notice { border-color: rgba(140, 128, 255, .4); background: rgba(140, 128, 255, .12); }
-      .notice a { color: #b3a9ff; }
+      .cta .secondary { color: #b3a9ff; border-color: rgba(140, 128, 255, .6); background: rgba(140, 128, 255, .12); }
+      .cta a:focus-visible { outline-color: #b3a9ff; }
     }
     figure {
       margin: 1.5rem 0 0; width: 100%; max-width: 960px;
@@ -49,21 +55,38 @@
       figure img { border-color: rgba(255, 255, 255, .12); }
     }
     figcaption { margin-top: .5rem; font-size: .8rem; opacity: .55; }
+    footer {
+      margin-top: 2.5rem; max-width: 60ch;
+      font-size: .8rem; opacity: .65;
+    }
+    footer p { max-width: none; opacity: 1; }
+    footer nav { margin-bottom: .4rem; }
+    footer a { color: inherit; }
   </style>
 </head>
 <body>
-  <h1>Le service ouvre progressivement</h1>
+  <h1>Le service est ouvert</h1>
   <p>ReachOutTrack, c'est un outil gratuit pour organiser sa recherche d'emploi,
      d'alternance et/ou de stage ou tout simplement gérer ses interactions réseaux.</p>
-  <p class="notice">
-    L'application est <strong>partiellement en service</strong> et déjà
-    accessible ici :<br />
-    <a href="https://app.reachouttrack.org/" rel="noopener">app.reachouttrack.org</a>
-  </p>
+  <div class="cta">
+    <a class="primary" href="https://app.reachouttrack.org/sign-in" rel="noopener">Créer mon compte gratuit</a>
+    <a class="secondary" href="https://app.reachouttrack.org/" rel="noopener">Essayer la démo sans compte</a>
+  </div>
   <figure>
     <img src="DemoReachOutTrack.png"
          alt="Aperçu de ReachOutTrack : tableau de bord avec candidatures, contacts, entreprises et rappels (données de démonstration fictives)." />
     <figcaption>Aperçu de l'interface — données de démonstration</figcaption>
   </figure>
+  <footer>
+    <nav>
+      <a href="https://app.reachouttrack.org/resources/legal" rel="noopener">Mentions légales</a>
+      ·
+      <a href="https://app.reachouttrack.org/resources/legal/privacy-policy" rel="noopener">Politique de confidentialité</a>
+    </nav>
+    <p>Cette page est hébergée par GitHub, Inc., 88 Colin P. Kelly Jr. Street,
+       San Francisco, CA 94107, États-Unis. GitHub enregistre l'adresse IP des
+       visiteurs dans ses journaux techniques. Aucun cookie ni traceur n'est
+       utilisé sur cette page.</p>
+  </footer>
 </body>
 </html>
