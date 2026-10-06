@@ -6,8 +6,11 @@ vers l'application (`app.reachouttrack.org`) et est conservée comme support de
 la future campagne de communication. Dépôt volontairement autonome : aucun
 code partagé avec l'application ReachOutTrack.
 
-- `index.html` — la page (autonome, styles inline, `noindex`)
+- `index.html` — la page (autonome, styles inline, indexable)
 - `CNAME` — domaine custom GitHub Pages
+- `robots.txt` — tout autorisé, pointe vers le sitemap
+- `sitemap.xml` — une seule URL, `https://www.reachouttrack.org/` (identique à
+  la balise `canonical` d'`index.html`)
 
 Mise à jour : éditer `index.html`, `git push` → redéploiement Pages en ~1 min.
 
@@ -33,8 +36,9 @@ arrêter le serveur.
 - **Aucun script tiers** de mesure d'audience ou de publicité (la CSP l'interdit
   de toute façon). Pour suivre la campagne, préférer des paramètres UTM sur les
   liens vers l'application.
-- **`noindex` conservé** tant que la disponibilité de la marque n'est pas
-  vérifiée ; cette vérification est un prérequis bloquant de la campagne.
+- **Page indexable** : `noindex` a été retiré une fois la demande de dépôt de
+  marque lancée. Le remettre (`<meta name="robots" content="noindex" />`) si le
+  dépôt est refusé ou fait l'objet d'une opposition.
 
 Procédure complète (DNS OVH, activation Pages, HTTPS, conditions de
 conservation de la page) : `docs/runbook-page-attente-github-pages.md` (§10)
